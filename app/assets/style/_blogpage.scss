@@ -1,0 +1,174 @@
+.blogpage{
+    padding: 24px 15px 80px 15px;
+    .tag{
+        margin-right: 15px;
+        margin-top: 8px;
+    }
+}
+@media (max-width:992px) {
+    .blogpage {
+        padding-top: 8px;
+    }
+}
+@media (max-width:992px) {
+    .blogpage {
+        padding-top: 16px;
+        padding-bottom: 48px;
+    }
+}
+
+
+.path{
+    font-size: $fs-normal;
+    color: $color-black;
+    a{
+        color: $color-black;
+        &:hover{
+            color: $color-red;
+        }
+    }
+    span{
+        color: $color-red;
+    }
+}
+.tag{
+    font-size: $fs-bigger;
+    color: $color-red;
+    font-weight: bold;
+    display: inline-block;
+    &:hover{
+        transform: scale(1.2);
+    }
+}
+@media (max-width:992px) {
+    .tag {
+        font-size: $fs-normal;
+    }
+}
+
+.blogpage-main{
+    margin-top: 8px;
+    display: flex;
+}
+
+.tags {
+    margin-left: 24px;
+    width: 30%;
+
+    h3 {
+        font-size: $fs-large;
+        color: $color-red;
+        font-weight: bold;
+        margin-bottom: 4px;
+
+        i {
+            font-family: "Font Awesome 5 Free";
+            margin-right: 12px;
+        }
+    }
+
+    a {
+        margin-right: 24px;
+    }
+}
+
+
+.blogpage-content{
+    width: 68%;
+    h2{
+        font-size: $fs-sec-title;
+        color: $color-black;
+        font-weight: bold;
+    }
+    h3{
+        font-size: $fs-bigger;
+        color: $color-black;
+        font-weight: bold;
+    }
+}
+
+.bp-list{
+    margin-top: 16px;
+}
+.bp-item{
+    margin-bottom: 40px;
+    img{
+        margin-bottom: 8px;
+    }
+
+}
+@media (max-width:992px) {
+    .bp-item{
+        margin-bottom: 24px;
+    }
+}
+@media (max-width:767px) {
+    .blogpage-content {
+        width: 100%;
+    }
+    .tags {
+        display: none;
+    }
+}
+
+.share{
+    display: flex;
+    border-bottom: 1px solid #707070;
+    li{
+        margin-right: 16px;
+        padding-bottom: 16px;
+        a {
+            font-weight: bold;
+            color: black;
+    
+            img {
+                width: 24px;
+                height: 24px;
+            }
+        }
+        &:hover {
+            transform: scale(1.2);
+        }
+    }
+}
+
+
+.bp-page{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 24px;
+    .left{
+        margin-right: 8px;
+    }
+    .right{
+        margin-left: 8px;
+    }
+    a{
+        display: block;
+        color: $color-black;
+        font-size: $fs-normal;
+        i{
+            font-family: "Font Awesome 5 Free";
+            font-weight: bold;
+            font-size: $fs-normal;
+        }
+        &:hover{
+            color: $color-red;
+            transform: scale(1.1);
+        }
+    }
+}
+
+@media (max-width:992px) {
+    .share {
+        margin-top: 16px;
+    }
+}
+@media (max-width:767px) {
+    .share {
+        display: none;
+    }
+    .bp-page{
+        display: none;
+    }
+}

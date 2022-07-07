@@ -1,0 +1,164 @@
+//gl-menu
+.gl-menu{
+	display: flex;
+	li{
+		width: 33.333%;
+		border-right: 1px solid #DCDCDC;
+	
+		:nth-child(1) {
+			border-left: 1px solid #DCDCDC;
+		}
+	}
+}
+.gl-menu-item{
+	text-align: center;
+	font-size: $fs-large;
+	color: $color-black;
+	font-weight: bold;
+	display: block;
+	padding: 24px 0;
+	border-bottom: 8px solid transparent;
+	&:hover{
+		border-bottom: 8px solid $color-d-red;
+	}
+}
+
+.menu-active {
+	border-bottom: 8px solid $color-d-red;
+}
+
+@media (max-width:992px) {
+	.gl-menu {
+		padding: 0;
+	}
+	.gl-menu-item {
+		font-size: $fs-bigger;
+	}
+}
+@media (max-width:767px) {
+	.gl-menu-item {
+		font-size: $fs-normal;
+	}
+}
+
+.dn{
+	display: none;
+}
+
+//gl-pic
+.gl-pic{
+	display: flex;
+}
+@media (max-width:992px) {
+	.gl-pic {
+		img{
+			height: 296px;
+		}
+	}
+}
+@media (max-width:767px) {
+	.gl-pic {
+		img {
+			height: 136px;
+		}
+	}
+}
+
+
+//content
+.content{
+	padding: 80px 15px;
+	text-align: center;
+	font-weight: bold;
+	h2{
+		font-size: $fs-third-title;
+	}
+	p{
+		font-size: $fs-large;
+		margin-bottom: 32px;
+	}
+}
+
+.content-list{
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+.opt{
+	li {
+		width: 22%;
+	}
+}
+.sun{
+	li{
+		width: 32%;
+	}
+}
+.fun{
+	li{
+		width: 48%;
+	}
+}
+.content-item {
+	margin-bottom: 80px;
+	img{
+		width: 100%;
+	}
+}
+
+.imfor{
+	display: flex;
+	justify-content: space-between;
+	font-weight: bold;
+	h3{
+		font-size: $fs-bigger;
+	}
+	p{
+		font-size: $fs-bigger;
+		color:$color-red ;
+		margin: 0;
+	}
+}
+.square-list{
+	display: flex;
+	.square1{
+		width: 24px;
+		height: 24px;
+		background: #5F3E2D ;
+		border-radius: 4px;
+		margin-right: 8px;
+	}
+	.square2 {
+		width: 24px;
+		height: 24px;
+		background: #B75929;
+		border-radius: 4px;
+	}
+}
+
+@media (max-width:992px) {
+	.opt ,.sun{
+		li {
+			width: 48%;
+		}
+	}
+	.content-item {
+		margin-bottom: 40px;
+	}
+}
+@media (max-width:767px) {
+	.opt,.sun {
+		li {
+			width: 100%;
+		}
+	}
+	.content {
+		padding: 40px 15px;
+		h2 {
+			font-size: $fs-bigger;
+		}
+	}
+	.content-item {
+		margin-bottom: 24px;
+	}
+}
