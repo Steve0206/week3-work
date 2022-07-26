@@ -1,0 +1,44 @@
+
+.opt-list{
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+
+}
+
+.opt-item {
+	margin-bottom: 80px;
+	width: 22%;
+	@include pad{
+		width: 48%;
+		margin-bottom: 40px;
+	}
+	@include mobile{
+		width: 100%;
+		margin-bottom: 24px;
+	}
+	img{
+		width: 100%;
+	}
+}
+
+@media (max-width:992px) {
+	.opt{
+		li {
+			width: 48%;
+		}
+	}
+	.opt-item {
+		margin-bottom: 40px;
+	}
+}
+@media (max-width:767px) {
+	.opt,.sun {
+		li {
+			width: 100%;
+		}
+	}
+	.opt-item {
+		margin-bottom: 24px;
+	}
+}

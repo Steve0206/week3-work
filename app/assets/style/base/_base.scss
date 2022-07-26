@@ -1,0 +1,27 @@
+img {
+	max-width: 100%;
+	height: auto;
+	display: block;
+}
+
+/*全域border box*/
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+body {
+	font-family: 'Roboto', 'Noto Sans TC', sans-serif;
+	font-size: $fs-normal;
+	line-height: 1.5;
+}
+
+a {
+	text-decoration: none;
+	display: block;
+	color:black;
+}
+
+
+

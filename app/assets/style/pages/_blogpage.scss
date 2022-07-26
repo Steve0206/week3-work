@@ -22,6 +22,7 @@
     font-size: $fs-normal;
     color: $color-black;
     a{
+        display: inline-block;
         color: $color-black;
         &:hover{
             color: $color-red;
@@ -61,8 +62,7 @@
         font-weight: bold;
         margin-bottom: 4px;
 
-        i {
-            font-family: "Font Awesome 5 Free";
+        span{
             margin-right: 12px;
         }
     }
@@ -113,7 +113,12 @@
 
 .share{
     display: flex;
-    border-bottom: 1px solid #707070;
+    @include pad{
+        margin-top: 16px;
+    }
+    @include mobile{
+        display: none;
+    }
     li{
         margin-right: 16px;
         padding-bottom: 16px;
@@ -134,9 +139,17 @@
 
 
 .bp-page{
+    width: 68%;
     display: flex;
     justify-content: space-between;
-    margin-top: 24px;
+    padding-top: 24px;
+    border-top: 1px solid #707070;
+    @include pad{
+        width: 100%;
+    }
+    @include mobile{
+        display: none;
+    }
     .left{
         margin-right: 8px;
     }
@@ -156,19 +169,5 @@
             color: $color-red;
             transform: scale(1.1);
         }
-    }
-}
-
-@media (max-width:992px) {
-    .share {
-        margin-top: 16px;
-    }
-}
-@media (max-width:767px) {
-    .share {
-        display: none;
-    }
-    .bp-page{
-        display: none;
     }
 }

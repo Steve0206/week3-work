@@ -1,0 +1,125 @@
+//gl-menu
+.gl-menu {
+    display: flex;
+    max-width: 1320px;
+    padding: 0 12px;
+    margin: 0 auto;
+    @include pad{
+        max-width: none;
+        padding: 0;
+    }
+
+    li {
+        width: 33.333%;
+        border-right: 1px solid #DCDCDC;
+
+        :nth-child(1) {
+            border-left: 1px solid #DCDCDC;
+        }
+    }
+}
+
+.gl-menu-item {
+    text-align: center;
+    font-size: $fs-large;
+    color: $color-black;
+    font-weight: bold;
+    display: block;
+    padding: 24px 0;
+    border-bottom: 8px solid transparent;
+    @include pad{
+        font-size: $fs-bigger;
+    }
+    @include mobile{
+        font-size: $fs-normal;
+    }
+    &:hover {
+        border-bottom: 8px solid $color-d-red;
+    }
+}
+
+.menu-active {
+    border-bottom: 8px solid $color-d-red;
+}
+
+
+//gl-pic
+.gl-pic {
+    display: flex;
+    img{
+        @include pad {
+            object-fit: cover;
+            height: 296px;
+        }
+        
+        @include mobile {
+            object-fit: cover;
+            height: 136px;
+        }
+    }
+}
+
+
+
+
+//content
+.content {
+    padding: 80px 15px;
+    text-align: center;
+    font-weight: bold;
+    @include mobile{
+        padding: 40px 15px;
+    }
+
+    h2 {
+        font-size: $fs-third-title;
+        @include mobile{
+            font-size: $fs-bigger;
+        }
+    }
+
+    p {
+        font-size: $fs-large;
+        margin-bottom: 32px;
+    }
+}
+.imfor {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+
+    h3 {
+        font-size: $fs-bigger;
+    }
+
+    p {
+        font-size: $fs-bigger;
+        color: $color-red ;
+        margin: 0;
+    }
+}
+
+.square-list {
+    display: flex;
+
+    .square1 {
+        width: 24px;
+        height: 24px;
+        background: #5F3E2D;
+        border-radius: 4px;
+        margin-right: 8px;
+        &:hover{
+            transform: scale(1.05);
+        }
+    }
+
+    .square2 {
+        width: 24px;
+        height: 24px;
+        background: #B75929;
+        border-radius: 4px;
+        &:hover {
+            transform: scale(1.05);
+        }
+    }
+}

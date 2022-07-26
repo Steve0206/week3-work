@@ -2,33 +2,11 @@ $('document').ready(function() {
     // 打開選單
     $('.mobile-link').click(function(event) {
         event.preventDefault();
-        $('body').toggleClass('open');
+        $('.m-menu').toggleClass('d-none');
     });
-
-    //glasses 選單 切換
-    $('.menu-opt').click(function(event) {
-        event.preventDefault();
-        $(this).parent().siblings().find('a').removeClass('menu-active');
-        $(this).addClass('menu-active')
-        $(".sun").addClass('dn')
-        $(".fun").addClass('dn')
-        $(".opt").removeClass('dn')
-    });
-    $('.menu-sun').click(function(event) {
-        event.preventDefault();
-        $(this).parent().siblings().find('a').removeClass('menu-active');
-        $(this).addClass('menu-active')
-        $(".opt").addClass('dn')
-        $(".fun").addClass('dn')
-        $(".sun").removeClass('dn')
-    });
-    $('.menu-fun').click(function(event) {
-        event.preventDefault();
-        $(this).parent().siblings().find('a').removeClass('menu-active');
-        $(this).addClass('menu-active')
-        $(".sun").addClass('dn')
-        $(".opt").addClass('dn')
-        $(".fun").removeClass('dn')
-    });
-    
+    $(".gl-menu-item").each(function(){ 
+        if($(this)[0].href==String(window.location)){ 
+            $(this).addClass("menu-active").parent().siblings().find("a").removeClass("menu-active"); 
+        } 
+    }); 
 });

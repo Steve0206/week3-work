@@ -1,6 +1,9 @@
 
 .blog {
     padding: 80px 15px;
+    @include mobile{
+        padding: 40px 15px;
+    }
     h2 {
         margin-top: 16px;
         margin-bottom: 32px;
@@ -8,25 +11,45 @@
         font-size: $fs-sec-title;
         border-left: 8px solid #9F1213;
         font-weight: bold;
+        @include mobile{
+            margin-bottom: 24px;
+        }
     }
 }
 .blog-list{
     margin-bottom: 124px;
+    @include pad{
+        margin-bottom: 80px;
+    }
+    @include mobile{
+        margin-bottom: 64px;
+    }
 }
 
 .list-item{
     display: flex;
     margin-bottom: 60px;
+    @include pad{
+        margin-bottom: 24px;
+    }
+    @include mobile{
+        flex-wrap: wrap;
+    }
     &:hover{
         transform: scale(1.03);
+        @include pad{
+            transform: scale(1.01);
+        }
     }
     img{
         width: 40%;
-    }
-    .blog-article{
-        width: 60%;
+        @include mobile{
+            width: 100%;
+        }
     }
 }
+
+
 
 .blog-article{
     display: flex;
@@ -34,13 +57,23 @@
     justify-content: space-between;
     align-items: flex-end;
     padding-left: 24px;
+    @include mobile{
+        padding: 0;
+        width: 100%;
+    }
 }
 
 .blog-text {
+    @include mobile{
+        width: 100%;
+    }
     h3 {
         font-size: $fs-large;
         color: $color-d-red;
         font-weight: bold;
+        @include pad{
+            font-size: $fs-bigger
+        }
     }
 
     h4 {
@@ -49,6 +82,9 @@
         font-weight: bold;
         color: $color-black;
         font-size: $fs-big;
+        @include pad {
+            font-size: $fs-normal
+        }
 
         span {
             font-size: $fs-normal;
@@ -60,6 +96,12 @@
         margin-top: 16px;
         color: #555555;
         font-size: $fs-big;
+        @include pad {
+            font-size: $fs-normal
+        }
+        @include mobile{
+            display: none;
+        }
     }
 }
 
@@ -67,67 +109,13 @@
     color: $color-d-red;
     font-size: $fs-larger;
     font-weight: bold;
+    @include pad{
+        display: none;
+    }
 }
 .s-more{
     display: none;
-}
-
-@media (max-width:992px) {
-    .blog-list {
-        margin-bottom: 80px;
-    }
-    .list-item {
-        margin-bottom: 24px;
-        &:hover {
-            transform: scale(1.01);
-        }
-    }
-    .blog-text {
-        h3 {
-            font-size: $fs-bigger;
-        }
-
-        h4 {
-            font-size: $fs-normal;
-        }
-
-        p {
-            font-size: $fs-normal;
-        }
-    }
-    .b-more{
-        display: none;
-    }
-    .s-more{
+    @include pad{
         display: inline;
-    }
-}
-@media (max-width:767px) {
-    .blog {
-        padding: 40px 15px;
-
-        h2 {
-            margin-bottom: 24px;
-        }
-    }
-    .blog-list {
-        margin-bottom: 64px;
-    }
-    .list-item {
-        flex-wrap: wrap;
-        img {
-            width: 100%;
-        }
-
-        .blog-article {
-            padding: 0;
-            width: 100%;
-            .blog-text{
-                width: 100%;
-                p{
-                    display: none;
-                }
-            }
-        }
     }
 }

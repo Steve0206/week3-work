@@ -1,0 +1,22 @@
+.sun-list {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+}
+.sun-item {
+    margin-bottom: 80px;
+    width: 32%;
+    @include pad{
+        width: 48%;
+        margin-bottom: 40px;
+    }
+    @include mobile{
+        width: 100%;
+        margin-bottom: 24px;
+    }
+
+    img {
+        width: 100%;
+    }
+}

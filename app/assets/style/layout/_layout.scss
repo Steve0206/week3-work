@@ -1,0 +1,320 @@
+.container {
+	max-width: 1320px;
+	padding: 0 12px;
+	margin: 0 auto;
+	@include pad{
+		max-width: 720px;
+	}
+	@include s-mobile{
+		max-width: 364px;
+	}
+}
+
+//header
+.header {
+	font-size: $fs-big;
+	padding: 10px 0;
+	background-color: $color-red;
+
+	&-content {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		h1 {
+			a {
+				@include hide-text;
+				width: 80px;
+				height: 49px;
+				background-image: url(../images/desktop/logo-big.png);
+				background-size: contain;
+				background-repeat: no-repeat;
+			}
+		}
+	}
+}
+
+.menu {
+	display: flex;
+	@include mobile{
+		display: none;
+	}
+
+	a {
+		padding: 20px;
+		display: block;
+		color: $color-white;
+
+		&:hover {
+			color: $color-black;
+			text-decoration: underline;
+			text-underline-offset: 10px;
+		}
+	}
+}
+
+//漢堡圖案
+.mobile-link {
+	display: none;
+	width: 30px;
+	height: 20px;
+	color: white;
+	@include mobile {
+		display: block;
+	}
+}
+
+/*手機選單*/
+.m-menu {
+	display: flex;
+	flex-wrap: wrap;
+	li{
+		width: 50%;
+		a {
+			text-align: center;
+			border: 1px solid white;
+			padding: 20px;
+			font-size: 16px;
+			color: $color-white;
+			background: $color-red;
+			
+			&:nth-child(odd){
+				margin-left: -1px;
+			}
+			&:nth-child(even) {
+				margin-right: -1px;
+			}
+			&:hover {
+				opacity: 0.5;
+			}
+		}
+	}
+
+}
+
+
+
+//footer
+.footer {
+	background-color: $color-red;
+	padding: 32px 0;
+
+	&-content {
+		display: flex;
+		justify-content: space-between;
+		padding-top: 16px;
+	}
+}
+
+.footer-left {
+	@include pad{
+		padding-bottom: 12px;
+	}
+}
+
+
+.footer-menu {
+	display: flex;
+
+	a {
+		display: block;
+		padding-top: 15px;
+		color: $color-white;
+		margin-right: 48px;
+		&:nth-last-child(){
+			margin-right: 0;
+		}
+		&:hover {
+			color: $color-black;
+		}
+	}
+	@include pad{
+		margin-right: 28px;
+	}
+	@include mobile{
+		display: none;
+	}
+}
+
+.connection {
+	padding: 32px 0;
+	font-weight: bold;
+	@include mobile{
+		padding: 0;
+	}
+
+	a {
+		margin-bottom: 20px;
+		font-size: $fs-large;
+		color: $color-white;
+		@include s-mobile{
+			font-weight: normal;
+			font-size: $fs-big;
+			margin-bottom: 8px;
+		}
+
+		i {
+			font-family: 'Font Awesome 5 Free';
+			color: white;
+			margin-right: 22px;
+			@include s-mobile {
+				margin-right: 8px;
+				width: 24px;
+				height: 24px;
+			}
+		}
+
+		&:hover{
+			opacity: 0.8;
+		}
+	}
+}
+
+
+.footer-icon {
+	display: flex;
+	a{
+		img {
+			width: 48px;
+			height: 48px;
+			margin-left: 32px;
+			@include pad{
+				width: 40px;
+				height: 40px;
+				margin-left: 16px;
+			}
+			@include s-mobile{
+				width: 24px;
+				height: 24px;
+				margin-left: 8px;
+			}
+		}
+		&:hover{
+			opacity: 0.8;
+		}
+		&:nth-child(1){
+			margin-left: 0;
+		}
+	}
+
+}
+
+
+.regular {
+	padding-top: 32px;
+	display: flex;
+	justify-content: space-between;
+	border-top: 1px solid $color-white;
+	@include s-mobile{
+		display: block;
+	}
+
+	p {
+		color: $color-white;
+		font-size: $fs-normal;
+	}
+
+	ul {
+		display: flex;
+		@include s-mobile{
+			display: block;
+		}
+		a {
+			color: $color-white;
+			display: block;
+			font-size: $fs-small;
+			margin-left: 48px;
+			@include s-mobile{
+				margin: 8px 0 0 0;
+			}
+
+			&:hover {
+				color: $color-black;
+			}
+		}
+	}
+}
+
+
+
+//page
+.page {
+	margin: 0 auto;
+	display: flex;
+	justify-content: center;
+	@include pad{
+		font-size: 12px;
+	}
+
+	a {
+		display: block;
+		padding: 12px 15px;
+		font-size: 18px;
+		color: $color-black;
+		border: 1px solid #555555;
+		@include mobile{
+			margin-top: 40px;
+			font-size: 16px;
+			padding: 12px 10px;
+		}
+
+		&:hover {
+			color: $color-white;
+			background: $color-black;
+		}
+	}
+
+	.page-arrow {
+		padding: 12px 12px;
+
+		&:hover {
+			background: rgba(85,85,85,0.4);
+			color: $color-black;
+		}
+	}
+
+	.page-active {
+		color: $color-white;
+		background: $color-black;
+	}
+}
+
+
+.navbar {
+	background: $color-d-red;
+	@include mobile{
+		display: none;
+	}
+
+	&-content {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+
+		i {
+			padding: 10px;
+			font-size: 25px;
+			color: $color-white;
+
+			&:hover {
+				transform: scale(1.5);
+			}
+		}
+	}
+}
+
+.blog-menu {
+	display: flex;
+
+	a {
+		display: block;
+		padding: 13px 0;
+		font-size: $fs-big;
+		color: $color-white;
+		margin-right: 48px;
+
+		&:hover {
+			transform: scale(1.5);
+		}
+	}
+}
+

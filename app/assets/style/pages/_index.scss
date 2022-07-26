@@ -3,16 +3,36 @@
 	background-image: url(../images/desktop/home-header.png);
 	background-repeat: no-repeat;
 	background-size: cover;
+	height: 787px;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	@include pad{
+		background-image: url(../images/tablet/home-header.png);
+	}
+	@include mobile{
+		background-image: url(../images/mobile/home-header.png);
+		background-position: center;
+	}
+	@include s-mobile{
+		height: 396px;
+	}
 }
 
 .banner-content {
 	text-align: right;
-	padding: 296px 0;
+	margin-right: 12px;
 
 	p {
 		font-weight: bold;
 		font-size:$fs-large;
 		color: $color-d-red;
+		@include mobile {
+			font-size: $fs-bigger;
+		}
+		@include s-mobile{
+			font-size: $fs-normal;
+		}
 	}
 
 	h2 {
@@ -20,7 +40,14 @@
 		color: $color-d-red;
 		margin-bottom: 10px;
 		font-weight: 900;
+		@include mobile {
+			font-size: $fs-large;
+		}
+		@include s-mobile {
+			font-size: $fs-bigger;
+		}
 	}
+	
 
 	a {
 		display: inline-block;
@@ -32,51 +59,24 @@
 	}
 }
 
-@media (max-width:992px) {
-	.banner {
-		background-image: url(../images/tablet/home-header.png);
-	}
-}
-
-@media (max-width:767px) {
-	.banner {
-		background-image: url(../images/mobile/home-header.png);
-	}
-
-	.banner-content {
-		padding: 144px 0;
-
-		p {
-			font-size: $fs-normal;
-		}
-
-		h2 {
-			font-size: $fs-bigger;
-		}
-	}
-}
 
 section {
 	padding: 80px 0;
-
+	@include mobile{
+		padding: 40px 0;
+	}
 	h2 {
 		text-align: center;
 		font-size: $fs-sec-title;
 		color: $color-d-red;
-		font-weight: 900;
+		font-weight: bold;
 		margin-bottom: 20px;
-	}
-}
-
-@media (max-width:767px) {
-	section {
-		padding: 40px 0;
-
-		h2 {
+		@include mobile {
 			font-size: $fs-bigger;
 		}
 	}
 }
+
 
 //specialty
 .specialty{
@@ -85,12 +85,26 @@ section {
 .specialty-list {
 	display: flex;
 	justify-content: space-between;
+	margin-left: -12px;
+	margin-right: -12px;
+	@include pad{
+		flex-wrap: wrap;
+		
+	}
 }
 
 .specialty-item {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	padding: 0 12px;
+	width: 25%;
+	@include pad {
+		width: 50%;
+	}
+	@include mobile{
+		width: 100%;
+	}
 
 	img {
 		width: 100px;
@@ -106,47 +120,16 @@ section {
 	}
 }
 
-@media (max-width:992px) {
-	.specialty-list {
-		flex-wrap: wrap;
-	}
 
-	.specialty-item {
-		width: 45%;
-	}
-}
-
-@media (max-width:767px) {
-	.specialty-list {
-		justify-content: center;
-	}
-
-	.specialty-item {
-		width: 90%;
-	}
-}
 
 //classic
 .classic-list {
 	display: flex;
 	justify-content: space-between;
 	margin-top: 48px;
-}
-
-.classic-item {
-	width: 33%;
-
-	h3 {
-		margin-top: 8px;
-		text-align: center;
-		font-size: $fs-sec-title;
-		color: $color-red;
-		font-weight: bold;
-	}
-}
-
-@media (max-width:992px) {
-	.classic-list {
+	margin-right: -12px;
+	margin-left: -12px;
+	@include pad{
 		display: flex;
 		flex-direction: column;
 		align-items: center;
@@ -154,17 +137,35 @@ section {
 	}
 }
 
-@media (max-width:767px) {
-	.classic-item {
+.classic-item {
+	width: 33.333%;
+	padding: 0 12px;
+	@include mobile{
 		width: 100%;
 	}
+
+	h3 {
+		margin-top: 8px;
+		text-align: center;
+		font-size: $fs-sec-title;
+		color: $color-red;
+		font-weight: bold;
+		font-style: italic;
+	}
 }
+
 
 //joint
 .joint{
 	background-image: url(../images/desktop/background-desktop.png);
 	background-size: cover;
 	background-repeat: no-repeat;
+	@include pad{
+		background-image: url(../images/tablet/background-tablet.png);
+	}
+	@include mobile{
+		background-image: url(../images/mobile/background-phone.png);
+	}
 	h2{
 		color: $color-white;
 	}
@@ -172,11 +173,22 @@ section {
 .joint-list {
 	display: flex;
 	justify-content: center;
+	@include pad{
+		flex-wrap: wrap;
+	}
 }
 
 .joint-item {
 	width: 50%;
+	@include pad{
+		width: 100%;
 
+	}
+	&:nth-child(2) {
+		@include pad{
+			margin-top: 24px;
+		}
+	}
 	h3 {
 		color: $color-red;
 		font-size: $fs-sec-title;
@@ -184,68 +196,54 @@ section {
 		background: $color-white;
 		text-align: center;
 		padding: 8px 0;
+		font-style: italic;
 	}
 }
 
-@media (max-width:992px) {
-	.joint {
-		background-image: url(../images/tablet/background-tablet.png);
-	}
-	.joint-list {
-		flex-wrap: wrap;
-	}
-
-	.joint-item {
-		width: 100%;
-
-		&:nth-child(2) {
-			margin-top: 24px;
-		}
-	}
-}
-@media (max-width:992px) {
-	.joint {
-		background-image: url(../images/mobile/background-phone.png);
-	}
-}
 
 //guest
 .guest-list{
 	display: flex;
 	justify-content: space-between;
+	align-items: stretch;
+	margin-left: -12px;
+	margin-right: -12px;
+	@include pad{
+		flex-wrap: wrap;
+	}
 }
 .guest-item{
-	width: 22%;
-	box-shadow: 0px 2px 6px #00000029;
+	padding: 0 12px;
+	width: 25%;
+	@include pad{
+		width: 50%;
+		margin-top: 24px;
+	}
+	@include mobile{
+		margin-bottom: 16px;
+		width: 100%;
+	}
+	.shadow{
+		box-shadow: 0px 2px 6px #00000029;
+	}
+
 }
 .guest-text{
 	padding: 16px;
 	display: flex;
 	flex-direction: column;
-	justify-content: space-between;
-	height: 200px;
-	span {
+	height: 248px;
+	p{
+		flex-grow: 1;
+	}
+	time {
 		display: block;
 		color: #707070;
 		font-size: $fs-small;
 	}
 }
 
-@media (max-width:992px) {
-	.guest-list {
-		flex-wrap: wrap;
-	}
-	.guest-item {
-		margin-top: 24px;
-		width: 47%;
-	}
-}
-@media (max-width:767px) {
-	.guest-item {
-		margin-bottom: 16px;
-		width: 100%;
-	}
-}
+
 
 
 //contact
@@ -254,7 +252,13 @@ section {
 }
 .contact-content{
 	margin: 0 auto;
-	max-width: 636px;
+	width: 50%;
+	@include pad{
+		width: 75%;
+	}
+	@include mobile{
+		width: 100%;
+	}
 	p {
 		font-size: $fs-big;
 		margin-bottom: 24px;
@@ -270,6 +274,7 @@ section {
 	margin-bottom: 16px;
 	input{
 		margin-top: 8px;
+		padding: 6px 12px;
 		width: 100%;
 		border: 1px solid black;
 	}
@@ -281,7 +286,10 @@ section {
 .check{
 	display: flex;
 	margin-bottom: 48px;
-	p{
+	@include mobile{
+		margin-bottom: 24px;
+	}
+	label{
 		font-size: $fs-normal;
 		margin-bottom: 0;
 	}
@@ -290,23 +298,13 @@ section {
 	display: block;
 	margin: 0 auto;
 	font-size: $fs-normal;
-	padding: 16px 176px;
+	width: 66%;
+	padding: 16px 0;
 	color: $color-white;
 	background-color: $color-red;
 	border: none;
 	cursor:pointer;
 	&:hover{
 		background-color: $color-d-red;
-	}
-}
-@media (max-width:992px) {
-	.submit {
-		padding: 16px 142px;
-	}
-}
-
-@media (max-width:767px) {
-	.check {
-		margin-bottom: 24px;
 	}
 }
